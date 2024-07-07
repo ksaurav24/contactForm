@@ -12,10 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.post("/submit", authenticateInput, authenticateJWT, async (req, res) => {
-  const { fullname, email, company, message } = req.user;
+  const { fullname, email, contact, company, message } = req.user;
   const formData = new FormData({
     fullname,
     email,
+    contact,
     company,
     message,
   });
@@ -28,5 +29,5 @@ app.post("/submit", authenticateInput, authenticateJWT, async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`App listening at http://localhost:${port}`);
 });
