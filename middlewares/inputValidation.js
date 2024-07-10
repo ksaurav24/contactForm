@@ -3,9 +3,8 @@ const zod = require("zod");
 const formDataSchema = zod.object({
   fullname: zod.string().min(3).max(50),
   email: zod.string().email().min(5).max(50),
-  contact: zod.number().min(10).max(11),
-  company: zod.string().min(3).max(50),
-  message: zod.string().min(5),
+  contact: zod.number().min(10).max(20),
+  message: zod.string().min(3),
 });
 
 const aunthenticateInput = (req, res, next) => {
@@ -13,7 +12,6 @@ const aunthenticateInput = (req, res, next) => {
     !req.body.fullname ||
     !req.body.email ||
     !req.body.contact ||
-    !req.body.company ||
     !req.body.message
   ) {
     res.status(400).send("All fields are required");

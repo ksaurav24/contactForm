@@ -8,7 +8,6 @@ const FormData = mongoose.model("FormData", {
   fullname: String,
   email: String,
   contact: Number,
-  company: String,
   message: String,
 });
 

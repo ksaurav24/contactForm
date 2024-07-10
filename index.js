@@ -17,7 +17,6 @@ app.post("/submit", authenticateInput, authenticateJWT, async (req, res) => {
     fullname,
     email,
     contact,
-    company,
     message,
   });
   try {
