@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.post("/submit", authenticateInput, authenticateJWT, async (req, res) => {
-  const { fullname, email, contact, company, message } = req.user;
+  const { fullname, email, contact, message } = req.user;
   const formData = new FormData({
     fullname,
     email,
