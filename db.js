@@ -5,7 +5,8 @@ dotenv.config();
 mongoose.connect(process.env.MONGO_URL);
 
 const FormData = mongoose.model("FormData", {
-  fullname: String,
+  firstname: String,
+  lastname: String,
   email: String,
   contact: Number,
   message: String,

@@ -1,7 +1,8 @@
 const zod = require("zod");
 
 const formDataSchema = zod.object({
-  fullname: zod.string().min(3).max(50),
+  firstname: zod.string().min(3).max(50),
+  lastname: zod.string().min(3).max(50),
   email: zod.string().email().min(5).max(50),
   contact: zod.number().min(10).max(20),
   message: zod.string().min(3),
@@ -9,7 +10,8 @@ const formDataSchema = zod.object({
 
 const aunthenticateInput = (req, res, next) => {
   if (
-    !req.body.fullname ||
+    !req.body.firstname ||
+    !req.body.lastname ||
     !req.body.email ||
     !req.body.contact ||
     !req.body.message
